@@ -1,0 +1,17 @@
+{
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.parameterHints.enabled": true,
+  "editor.inlineSuggest.enabled": false,
+  "python.analysis.autoImportCompletions": true,
+
+  // Disable Copilot suggestions
+  "github.copilot.enable": {
+    "*": false,
+    "python": false
+  }
+}
