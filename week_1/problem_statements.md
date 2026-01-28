@@ -124,3 +124,37 @@ api_tests = ["login", "logout", "settings"]
 ```
 
 ---
+
+---
+
+# 🧩 Problem Statement 4: User Management Model
+
+**File:** `user.py`
+
+## 📝 Problem Description
+
+You are building a simple user management model for an application. Implement the classes and composition described below.
+
+## 🔹 Requirements
+
+1. Base Class: `User`
+   - Attributes: `username: str`, `email: str`, `active: bool`
+   - Behavior:
+     - `is_active()` → returns `bool`
+     - `deactivate()` → sets the user inactive
+     - `get_display_name()` → returns `<username> (<email>)`
+
+2. Child Class: `AdminUser` (inherits from `User`)
+   - Additional attribute: `role: str` (default = `"admin"`)
+   - Overridden behavior:
+     - `is_active()` → admin is active only if the base user is active AND `role == "admin"`
+   - Additional behavior:
+     - `is_admin()` → always returns `True`
+
+3. Composition: `Profile`
+   - Attributes: `full_name: str`, `age: int`
+   - Rule: `age` cannot be negative
+
+4. Composition usage
+   - Every `User` has a `Profile` (passed during user creation)
+   - `User` exposes: `get_profile_summary()` → returns `<full_name> | Age: <age>`
