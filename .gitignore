@@ -13,6 +13,8 @@ localSrc/
 *.pyc
 *.pyo
 *.pyd
+*.py[cod]
+.pytest_cache/
 
 # --- Environment Variables & Secrets ---
 # NEVER commit your passwords or API keys to GitHub
