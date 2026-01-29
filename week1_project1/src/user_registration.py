@@ -28,7 +28,7 @@ class UserValidator:
 class UserService:
     def register_user(self, name: str, email: str, age: int) -> User:
         UserValidator.validate_name(name)
-        UserValidator.validate_email(email)
         UserValidator.validate_age(age)
+        UserValidator.validate_email(email)
 
         return User(name, email, age)

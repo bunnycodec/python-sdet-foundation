@@ -1,29 +1,32 @@
 import pytest
-from src.user_registration import UserService, User
+from src.user_registration import UserService
 
-@pytest.fixture
-def service():
-    return UserService()
 
-def test_register_user_success(service: UserService):
-    user = service.register_user("Bunny", "bunny@example.com", 25)
-    
-    assert isinstance(user, User)
+def test_register_user_success():
+    service = UserService()
+
+    user = service.register_user("Bunny", "bunny@test.com", 21)
     assert user.name == "Bunny"
-    assert user.email == "bunny@example.com"
-    assert user.age == 25
+    assert user.email == "bunny@test.com"
+    assert user.age == 21
 
-def test_register_user_underage(service: UserService):
+def test_register_user_underage():
+    service = UserService()
+
     with pytest.raises(ValueError, match="cannot be less than 18 years old."):
-        service.register_user("Young User", "test@test.com", 17)
+        service.register_user("Bunny", "bunny@test.com", 15)
 
-def test_register_user_invalid_email_format(service: UserService):
-    with pytest.raises(ValueError, match="Email ID is not valid."):
-        service.register_user("John", "john@com", 30)
-    
-    with pytest.raises(ValueError, match="Email ID is not valid."):
-        service.register_user("John", "john@@example.com", 30)
+def test_register_user_invalid_email_format():
+    service = UserService()
 
-def test_register_user_empty_name(service: UserService):
-    with pytest.raises(ValueError, match="cannot be empty or whitespace."):
-        service.register_user("   ", "john@example.com", 30)
+    with pytest.raises(ValueError, match="must contain exactly one @"):
+        service.register_user("Bunny", "bunny@@test.com", 23)
+
+    with pytest.raises(ValueError, match="domain must contain a dot"):
+        service.register_user("Bunny", "bunny@testcom", 23)
+
+def test_register_user_invalid_name():
+    service = UserService()
+
+    with pytest.raises(ValueError, match="cannot be empty or whitespace"):
+        service.register_user("  ", "bunny@test.com", 23)
