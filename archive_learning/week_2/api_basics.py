@@ -1,4 +1,3 @@
-from typing import Any
 import requests
 
 Base_URL = "https://jsonplaceholder.typicode.com"
@@ -21,7 +20,7 @@ def get_single_post_and_validate_json():
     assert "title" in response_json
 
 def create_post_with_payload():
-    payload: dict[str, Any] = {
+    payload: dict[str, str|int] = {
         "userId": 1,
         "title": "SK_Testing",
         "body": "This is just a dummy testing done by SK"
