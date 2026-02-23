@@ -39,6 +39,27 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+### Installation & Testing (macOS / Linux)
+
+Follow these steps to create an isolated environment, install dependencies from `requirements.txt`, and run tests.
+
+```bash
+# create and activate virtualenv
+python -m venv .venv
+source .venv/bin/activate
+
+# make sure pip is up-to-date
+python -m pip install --upgrade pip
+
+# install project dependencies
+pip install -r requirements.txt
+
+# run the test suite (uses pytest)
+pytest -q
+```
+
+If you prefer pinned versions, update `requirements.txt` with exact versions (for example `requests==2.31.0`, `pytest==7.4.0`).
+
 ## Problem Statements
 
 - **Log Parser** - Parse and categorize application log messages by severity level
