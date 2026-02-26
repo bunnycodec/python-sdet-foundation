@@ -36,7 +36,7 @@ class ProductBuilder:
         return self._product
 
 
-def load_json(filepath: str) -> dict[str, str]:
+def load_json(filepath: str) -> Any:
     base_dir = os.path.dirname(__file__)
     full_path = os.path.join(base_dir, filepath)
     with open(full_path) as file:
@@ -60,6 +60,7 @@ def test_products_with_id(case: dict[str, str]):
     response = requests.get(f"{BASE_URL}/products/{case["product_id"]}", timeout=10)
 
     assert response.status_code == case["expected_status"]
+    assert response.json()["id"] == case["product_id"]
 
 
 @pytest.mark.smoke
@@ -88,7 +89,7 @@ def test_expensive_product():
 
 
 @pytest.mark.smoke
-def test_invalid_category():
+def test_invalid_price_type():
     product = ProductBuilder().with_price("not_a_price").build()  # type: ignore
 
     assert isinstance(product["price"], str)
