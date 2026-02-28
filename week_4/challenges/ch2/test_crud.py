@@ -27,7 +27,7 @@ def test_get_all_products(case: dict[str, int]):
 @pytest.mark.parametrize("case", load_json("data/crud.json")["create_product"])
 def test_create_a_product(case: dict[str, Any]):
     payload_data: dict[str, Any] = case["payload"]
-    (
+    payload = (
         ProductBuilder()
         .with_title(payload_data["title"])
         .with_category(payload_data["category"])
@@ -35,7 +35,7 @@ def test_create_a_product(case: dict[str, Any]):
         .with_price(payload_data["price"])
         .build()
     )
-    response = requests.post(f"{BASE_URL}/products", json=payload_data, timeout=10)
+    response = requests.post(f"{BASE_URL}/products", json=payload, timeout=10)
 
     assert response.status_code == case["expected_status"]
     assert "id" in response.json()
