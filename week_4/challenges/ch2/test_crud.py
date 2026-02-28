@@ -15,7 +15,7 @@ def load_json(filepath: str):
         return json.load(file)
 
 
-@pytest.mark.now
+@pytest.mark.smoke
 @pytest.mark.parametrize("case", load_json("data/crud.json")["get_product"])
 def test_get_all_products(case: dict[str, int]):
     response = requests.get(f"{BASE_URL}/products", timeout=10)
@@ -23,7 +23,7 @@ def test_get_all_products(case: dict[str, int]):
     assert response.status_code == case["expected_status"]
 
 
-@pytest.mark.now
+@pytest.mark.smoke
 @pytest.mark.parametrize("case", load_json("data/crud.json")["create_product"])
 def test_create_a_product(case: dict[str, Any]):
     payload_data: dict[str, Any] = case["payload"]
@@ -41,7 +41,7 @@ def test_create_a_product(case: dict[str, Any]):
     assert "id" in response.json()
 
 
-@pytest.mark.now
+@pytest.mark.smoke
 @pytest.mark.parametrize("case", load_json("data/crud.json")["update_product"])
 def test_update_a_product(case: dict[str, Any]):
 
@@ -71,7 +71,7 @@ def test_update_a_product(case: dict[str, Any]):
             assert response.json()[key] == case[key]
 
 
-@pytest.mark.now
+@pytest.mark.smoke
 @pytest.mark.parametrize("case", load_json("data/crud.json")["delete_product"])
 def test_delete_a_product(case: dict[str, Any]):
     response = requests.delete(f"{BASE_URL}/products/{case['id']}", timeout=10)
