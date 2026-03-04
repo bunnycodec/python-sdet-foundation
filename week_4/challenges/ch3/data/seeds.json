@@ -1,0 +1,27 @@
+{
+  "list_of_products": [
+    { "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops", "price": 109.95, "category": "men's clothing" },
+    { "title": "Banana", "price": 23.45, "category": "food" },
+    { "title": "Car", "price": 23456.78, "category": "vehicles" },
+    { "title": "Desk", "price": 1234.56, "category": "furniture" },
+    { "title": "Earphones", "price": 567.89, "category": "electronics" },
+    { "title": "Fridge", "price": 3456.78, "category": "appliances" },
+    { "title": "Guitar", "price": 789.01, "category": "musical instruments" },
+    { "title": "Hat", "price": 45.67, "category": "clothing" },
+    { "title": "Ice Cream", "price": 12.34, "category": "food" },
+    { "title": "Jacket", "price": 89.01, "category": "clothing" },
+    { "title": "Keyboard", "price": 234.56, "category": "electronics" },
+    { "title": "Lamp", "price": 78.9, "category": "furniture" },
+    { "title": "Monitor", "price": 1234.56, "category": "electronics" },
+    { "title": "Notebook", "price": 5.67, "category": "stationery" },
+    { "title": "Oven", "price": 4567.89, "category": "appliances" },
+    { "title": "Piano", "price": 12345.67, "category": "musical instruments" },
+    { "title": "Quilt", "price": 89.01, "category": "home decor" },
+    { "title": "Refrigerator", "price": 6789.01, "category": "appliances" },
+    { "title": "Sofa", "price": 2345.67, "category": "furniture" },
+    { "title": "Table", "price": 1234.56, "category": "furniture" }
+  ],
+  "count_products": [{ "expected_status": 200, "expected_count": 20 }],
+  "product_validate": [{ "expected_status": 200, "id": 1 }],
+  "product_category": [{ "expected_status": 200, "category": "electronics" }]
+}

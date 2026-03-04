@@ -1,0 +1,54 @@
+{
+  "list_of_products": [
+    { "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops", "price": 109.95, "category": "men's clothing" },
+    { "title": "Banana", "price": 23.45, "category": "food" },
+    { "title": "Car", "price": 23456.78, "category": "vehicles" },
+    { "title": "Desk", "price": 1234.56, "category": "furniture" },
+    { "title": "Earphones", "price": 567.89, "category": "electronics" },
+    { "title": "Fridge", "price": 3456.78, "category": "appliances" },
+    { "title": "Guitar", "price": 789.01, "category": "musical instruments" },
+    { "title": "Hat", "price": 45.67, "category": "clothing" },
+    { "title": "Ice Cream", "price": 12.34, "category": "food" },
+    { "title": "Jacket", "price": 89.01, "category": "clothing" },
+    { "title": "Keyboard", "price": 234.56, "category": "electronics" },
+    { "title": "Lamp", "price": 78.9, "category": "furniture" },
+    { "title": "Monitor", "price": 1234.56, "category": "electronics" },
+    { "title": "Notebook", "price": 5.67, "category": "stationery" },
+    { "title": "Oven", "price": 4567.89, "category": "appliances" },
+    { "title": "Piano", "price": 12345.67, "category": "musical instruments" },
+    { "title": "Quilt", "price": 89.01, "category": "home decor" },
+    { "title": "Refrigerator", "price": 6789.01, "category": "appliances" },
+    { "title": "Sofa", "price": 2345.67, "category": "furniture" },
+    { "title": "Table", "price": 1234.56, "category": "furniture" }
+  ],
+  "test_get_all_products": [{ "expected_status": 200, "expected_count": 20 }],
+  "test_get_product_by_id": [{ "expected_status": 200, "id": 1 }],
+  "test_get_products_by_category": [{ "expected_status": 200, "category": "electronics" }],
+  "test_create_product": [
+    {
+      "input": { "title": "New Product", "price": 99.99, "category": "gadgets" },
+      "expected_status": 201,
+      "expected_id": 21
+    }
+  ],
+  "test_update_product": [
+    {
+      "id": 1,
+      "input": { "title": "Updated Product", "price": 199.99, "category": "updated category" },
+      "expected_status": 200
+    }
+  ],
+  "test_delete_product": [{ "id": 1, "expected_status": 200 }],
+  "test_performance_get_all_products": [{ "expected_status": 200, "max_response_time_ms": 500 }],
+  "test_performance_get_product_by_id": [{ "id": 1, "expected_status": 200, "max_response_time_ms": 300 }],
+  "test_performance_create_product": [
+    {
+      "category": "electronics",
+      "expected_status": 201,
+      "max_response_time_ms": 400,
+      "input": { "title": "Performance Test Product", "price": 49.99, "category": "gadgets" }
+    }
+  ],
+  "test_db_validation": [{ "expected_status": 200 }],
+  "test_invalid_url": [{ "expected_status": 404, "url": "invalid_url/asdf" }]
+}

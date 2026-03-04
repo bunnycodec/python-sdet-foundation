@@ -1,0 +1,7 @@
+{
+  "get_all_products": [{ "expected_status": 200, "max_response_time_ms": 2000 }],
+  "get_product_by_id": [{ "expected_status": 200, "max_response_time_ms": 1500 }],
+  "create_product": [
+    { "expected_status": 201, "max_response_time_ms": 2500, "payload": { "name": "Test Product", "price": 19.99, "category": "Test Category" } }
+  ]
+}

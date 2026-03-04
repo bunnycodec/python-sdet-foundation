@@ -1,0 +1,21 @@
+{
+  "get_product": [{ "expected_status": 200 }],
+  "create_product": [
+    {
+      "expected_status": 201,
+      "payload": {
+        "title": "Bunny Test",
+        "price": 10.5,
+        "description": "Bunny description",
+        "category": "Bunny category"
+      }
+    }
+  ],
+  "update_product": [
+    { "expected_status": 200, "id": 2, "title": "Updated Title" },
+    { "expected_status": 200, "id": 3, "description": "Updated Description" },
+    { "expected_status": 200, "id": 4, "category": "Updated Category" },
+    { "expected_status": 200, "id": 5, "price": 12.8 }
+  ],
+  "delete_product": [{ "expected_status": 200, "id": 3 }]
+}

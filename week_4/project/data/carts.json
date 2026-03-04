@@ -1,0 +1,13 @@
+{
+  "test_get_all_carts": [{ "expected_status": 200, "expected_count": 7 }],
+  "test_get_cart_by_id": [{ "expected_status": 200, "id": 1, "expected_user_id": 1 }],
+  "test_create_cart": [{ "expected_status": 201, "user_id": 2, "products": [{ "product_id": 1, "quantity": 2 }] }],
+  "test_update_cart": [{ "expected_status": 200, "id": 1, "user_id": 1, "products": [{ "product_id": 1, "quantity": 3 }] }],
+  "test_delete_cart": [{ "expected_status": 200, "id": 1 }],
+  "test_get_cart_by_id_not_found": [{ "expected_status": 400, "id": "ererer" }],
+  "test_performance_get_all_carts": [{ "expected_status": 200, "max_response_time": 500 }],
+  "test_performance_get_cart_by_id": [{ "expected_status": 200, "id": 1, "max_response_time": 500 }],
+  "test_performance_create_cart": [
+    { "expected_status": 201, "user_id": 2, "products": [{ "product_id": 1, "quantity": 2 }], "max_response_time": 500 }
+  ]
+}

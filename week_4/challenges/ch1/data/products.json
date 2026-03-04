@@ -1,0 +1,15 @@
+{
+  "get_products_with_limit": [
+    { "limit": 3, "expected_status": 200, "expected_count": 3 },
+    { "limit": 5, "expected_status": 200, "expected_count": 5 },
+    { "limit": 10, "expected_status": 200, "expected_count": 10 }
+  ],
+  "get_product_by_id": [
+    { "product_id": 1, "expected_status": 200 },
+    { "product_id": 2, "expected_status": 200 },
+    { "product_id": 3, "expected_status": 200 },
+    { "product_id": 4, "expected_status": 200 },
+    { "product_id": 5, "expected_status": 200 }
+  ],
+  "get_categories": [{ "expected_status": 200 }]
+}
