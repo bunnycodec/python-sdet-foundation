@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-This repository contains a simple API testing project built during Week 4 of the Python SDET Foundation Learning. The tests interact with the Fake Store API, exercising endpoints for products, orders, and users. The aim of the project is to demonstrate API automation using **pytest** along with custom builders, fixtures and data handling utilities.
+This repository contains a simple API testing project built during Week 4 of the Python SDET Foundation Learning. The tests interact with the Fake Store API, exercising endpoints for products, carts, and users. The aim of the project is to demonstrate API automation using **pytest** along with custom builders, fixtures and data handling utilities.
 
 ## 🚀 Installation & Running
 
@@ -29,10 +29,10 @@ This repository contains a simple API testing project built during Week 4 of the
 ## ✅ Test Coverage Summary
 
 - The suite includes unit tests for builders and utility functions as well as end‑to‑end API tests against the Fake Store service.
-- Typical coverage runs in the high‑80s to low‑90s percent range, depending on which modules are exercised.
+- Coverage reports can be generated with the command above. Key areas covered: products CRUD, users CRUD, carts CRUD, DB validation, performance assertions.
 - Coverage reports are generated with `coverage` and can be inspected with the HTML output above. Key areas covered:
   - Request/response assertions
-  - Data builders for products and orders
+  - Data builders for products and carts
   - Fixture behaviour for session management
 
 ## ⚠️ Known Limitations
