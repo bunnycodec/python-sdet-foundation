@@ -1,0 +1,12 @@
+{
+  "test_get_all_users": [{ "expected_status": 200, "expected_count": 10 }],
+  "test_get_user_by_id": [{ "expected_status": 200, "id": 1, "expected_name": "john doe" }],
+  "test_create_user": [{ "expected_status": 201, "username": "jane_doe", "email": "jane.doe@example.com" }],
+  "test_update_user": [{ "expected_status": 200, "id": 1, "username": "John Smith", "email": "john.smith@example.com" }],
+  "test_delete_user": [{ "expected_status": 200, "id": 1 }],
+  "test_get_nonexistent_user": [{ "expected_status": 400, "id": 999 }],
+  "test_invalid_url_for_user": [{ "expected_status": 400, "url": "tytyty" }],
+  "test_performance_get_all_users": [{ "expected_status": 200, "max_response_time": 500 }],
+  "test_performance_get_user_by_id": [{ "expected_status": 200, "id": 1, "max_response_time": 500 }],
+  "test_performance_create_user": [{ "expected_status": 201, "username": "jane_doe", "email": "jane.doe@example.com", "max_response_time": 500 }]
+}
